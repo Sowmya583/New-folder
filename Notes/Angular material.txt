@@ -1,0 +1,18 @@
+
+
+Angular Material
+
+ng new <application name> - to create angulat application
+cd <application name>
+ng serve - to run application
+
+ng add @angular/material@14 ( for angular 4 version) - Install Angular material with command
+choose theme, typography, animations to install angular material
+
+https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/ 
+https://fonts.google.com/icons    - angular material mat icon list
+
+&nbsp; - for horizontal spacing in html
+<br /> - for vertical spacing
+
+In css use padding for spacing

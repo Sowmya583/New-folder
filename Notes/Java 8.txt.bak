@@ -1,0 +1,414 @@
+List result=arr.stream().filter(s->s.startWith("s")collect(Collectors.toList());
+
+@Mock StudentRepository studentrepo;
+@Test
+
+git branch branchname
+
+JAVA 8 Features 
+1.Functional Interfaces
+2.Lambda Expressions
+3.Streams
+4.Method reference
+5.default and static methods - in interfaces
+6.forEach() method
+
+
+LINKS:
+https://youtu.be/ePJrt5-G8eM
+
+Lambda expressions - provides implementation to functional interface.
+It provides a clear and concise way to represent method of FI using an expression.
+FI - An interface which contains only one abstract method - before lambdas used anonymous classes
+FI can have any no.of default and static methods but only one abstract method
+FI also called as single abstract method interfaces. helps to achieve functional programming.
+(Arguments list)-> { Body }
+
+EX 1:
+
+WITHOUT LAMBDA EXPRESSIONS
+
+@FunctionalInterface //optional to write
+interface Sayable{  
+    public String say();  
+}
+public class LambdaExpressionExample1 implements Sayable{  
+	public static void main(String[] args) { 
+	
+	Sayable s = new Sayable();
+	@Override 
+	public String say(){
+		return "I Have nothing to say";
+	}
+      
+    System.out.println(s.say());  
+	}  
+} 
+
+WITH LAMBDA EXPRESSIONS
+
+@FunctionalInterface //optional to write
+interface Sayable{  
+    public String say();  
+}  
+public class LambdaExpressionExample1{  
+	public static void main(String[] args) {  
+    Sayable s=()->{  
+        return "I have nothing to say.";
+    };  
+    System.out.println(s.say());  
+	}  
+} 
+
+EX 2: 
+List<String> fruits = new ArrayList<String>();
+fruits.add("apple");
+fruits.add("banana");
+fruits.add("orange");
+
+fruits.forEach(               // forEach internally uses consumer FI.
+(n)-> System.out.println(n);  // using lambda to iterate through collection
+);
+
+=>In-built FI in java 8
+1. Consumer FI - we use this when we need a obj as input  and performs some operations on that object but doesn't return anything.
+void accept(T t); - generic type obj
+EX: lambda exp of abstract method of consumer FI.
+
+public class ConsumerDemo{
+	public static void main(String[] args){
+	Consumer<Integer> consumer = (t) -> {
+		System.out.println("Printing : " + t);
+	};
+	consumer.accept(10); - calls accept method from Consumer interface and takes interger as input.
+	}	
+}
+->forEach uses consumer as an argument.
+Ex: List<Integer> list= Arrays.asList(1,2,3,4,5);
+	list.stream().forEach(t -> SOP(prints all numbs:" +t));
+
+2. Predicate FI - used for conditional checks.(true or false).
+boolean test(T t);
+EX: Even or Odd
+public class PredicateDemo{
+	public static void main(String[] args){
+	Predicate<Integer> predicate = (t) -> {
+		if(t%2==0)
+		{
+			return true;
+		}
+		else
+			return false;
+	};
+	System.out.println(predicate.test(10)); - calls test method from Predicate interface and takes interger as input and return boolean.
+	}	
+}
+->filter method uses predicate as an argument.
+Ex: List<Integer> list= Arrays.asList(1,2,3,4,5);
+	list.stream().filter(t -> t%2==0).forEach(t -> SOP("prints Even numb:" +t));
+
+
+3. Supplier FI - can be used in all contexts where there is no input but an output is expected.
+T get();
+EX: 
+Supplier<String> supplier = ()-> { return "Returns always string"; };
+SOP(supplier.get()); // o/p - Returns always string
+
+-> when filter result doesn't exits then sends dummy data
+List<String> list= Arrays.asList("a", "b");
+SOP(list.stream().findAny().orElseGet(supplier)); // o/p - a
+
+List<String> list= Arrays.asList();
+SOP(list.stream().findAny().orElseGet(()-> "No elements";));  //o/p - No elements
+ 
+
+Streams:
+
+-> It simply conveys elements from a source such as a data structure, an array, or an I/O channel, through a pipeline of computational operations.
+-> Stream does not store elements.
+-> Stream API is used to process collection of objects. with functional style of coding using lambda expressions. 
+-> A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired o/p.
+-> You can use stream to filter, collect, print, and convert from one data structure to other etc
+Methods: Filter - for conditional check, forEach - for iteration.
+
+Ex:
+
+class Product{
+	int id;
+	String name;
+	constructor..
+}
+main(){
+	List<Product> l=new ArrayList<Product>();
+	l.add(new Product(1,"a",2500);
+	l.add(new Product(1,"b",3000);
+	
+	List<float> l2 = l.stream()
+	.filter(p->p.price>2000)// filtering data
+	.map(p->p.price)// fetching data  - transforming data from Product to float.
+	.collect(Collectors.toList());//collecting as list
+	sot(l2);//output is price list about 2000 products
+
+}
+
+-> Sorting a list
+EX:
+List<Integer> list = new ArrayList<>();
+list.add(8);
+list.add(12);
+list.add(4);
+
+SOP(Collections.sort(list)); - sorts list in asc order - 4,8,12
+Collections.reverse(list); desc order - 12,8,4
+
+sort using lambda:
+list.stream().sorted().forEach(s->SOP(s)); - asc order
+list.stream().sorted(Comparator.reverseOrder()).forEach(s->SOP(s)); - desc order 
+
+-for sorting of objs like employee, student based on fields we use comparators
+List<Employee> employees = new List<>();
+Collections.sort(employees, new MyComparator());
+SOP(employees);
+
+class MyComparator implements Comparator<Employee>{
+	@Override
+	public int compare(Employee o1, Employee o2){
+		return o1.getSalary()-o2.getSalary(); //ASC order
+		return o2.getSalary()-o1.getSalary(); //DESC order
+	}
+}
+
+-Comparator is a FI so use lambda exp
+Collections.sort(employees,(o1,o2)->(o1.getSalary()-o2.getSalary()) );
+
+- using stream API
+employees.stream().sorted((o1,o2)->(o1.getSalary()-o2.getSalary())).forEach(System.out::println);
+employees.stream().sorted(Comparator.comparing(emp->emp.getSalary())).forEach(System.out::println);
+
+=> Stream API intermediate methods - returns another stream as part of o/p.
+Map() & flatMap()
+1. map() - used for data transformation - 1-1 mapping - produce 1 val for 1 i/p
+	It processes stream of values.
+	It does only mapping
+	It's mapper function produces single value for each i/p value
+	It is 1-1 mapping
+	data transformation: from stream to stream
+	Use this method when mapper function is producing a single value for each i/p value.
+
+- Data transformation 
+transform data from lowercase to upper case.
+Stream.of("a","b","c"); - [A,B,C]
+EX: List<Employee> convert to List<String> -> Data Transforming - takes employee data and gets salary of employees as float in a list.
+one - one mapping -> one employee has one email id
+List<String> emails = employees.stream().map(emp->emp.getEmail()).collect(Collectors.toList());
+SOP(emails);
+
+2. flatMap() - used for data transformation & flattering - map() + flattering - 1- many mapping - produce multiple values for each i/p.
+	It processes stream of stream of values.
+	It performs mapping and flattering
+	It's mapper function produces multiple values for each i/p value
+	It is 1-many mapping
+	data transformation: from stream of stream to stream
+	Use this method when mapper function is producing a multiple values for each i/p value.
+
+- Flattering
+converting stream of stream data to single stream is flattering
+[[1,2],[3,4],[5,6]] -  [1,2,3,4,5,6]
+EX: one employee has many phone numbers then use flattering  - 1- many mapping
+List<String> phones = employees.stream().flatmap(emp->emp.getPhoneNumbers().stream()).collect(Collectors.toList());
+SOP(phones); 
+
+=>Map-Reduce 
+
+Map-Reduce is a functional programming model it serves our 2 purpose
+Map - Transforming data
+Reduce - Aggregating data - combine elements of a stream and produces a single value
+Ex: Stream:[2,4,6,1,3] sum of numbs in stream?
+map() - transform stream<obj> to stream of int
+reduce() - combines stream of int and produce the sum as result
+reduce(T identity, BinaryOperator<T> accumulator);
+identity is initial value , accumulator is function for performing aggregation
+List<Integer> num = Arrays.asList(3,4,6,1,9);
+Interger reducesum = num.stream().reduce(0,(a,b)->a+b);
+SOP(reducesum): // o/p - sum of elements
+
+->FI's before JAVA 8
+Runnable - run method
+Callable - call method
+Comparator - compare method
+
+-> FI's after JAVA 8
+Consumer - accept method
+Predicate - test method
+Supplier - get method
+Function - apply method
+
+interface Function<T, R>{
+	R apply(T t);
+}
+
+lambda - Function<Interger, String> func = (t)->{"output: " +t};
+		 SOP(func.apply(10)); // o/p output: 10 - takes integer as i/p and gives o/p as string.
+
+
+
+->Comparator - is FI 
+Contains two abstract methods still called as FI.
+@FunctionalInterface
+interface Comparator{
+
+	int compare(T o1, T o2); // abstract method 
+	boolean equals(Object obj); // equals is a abstract method overriding from the Javalang.Object So doesn't count as an abstract method
+	                            // equals is inherited from obj class not from comparator
+	
+}
+
+->Use of default and static methods in FI.
+It there is only abstract method then it will force all the implementations to override this abstract method.
+If you define a method as default then it won't force implementation class to override that default method. if someone want to override then can override or else the default method remains same.
+The static methoad acts as a utility class and can add few of the methods which are widely used in project.
+or repeatedly using code can be kept as a static method in utility class , rather than that u can keep it inside a same interface which is been used as part of implementation
+
+-> Can we extend FI ?
+yes, we can extend but it doesn't act as  FI it acts as nrml interface because multiple abstract methods need to implement which is not possible in FI(takes only one abstract method). 
+EX: 
+@FunctionalInterface - error- remove this for extending
+interface Payment extends orders{
+	void pay(); - 1 abstract method to implement
+
+}
+interface Orders{
+	void cart(); - 2 abstract method to implement
+}
+
+-> Method reference - used to refer a method of FI
+shorthand notation of a lambda expression to call a method
+
+System.out.println(t); - nrml way 
+System.out::println; - method reference - println is a static method 
+method reference can be static method reference or instance method reference or constructor methoad reference
+
+Test{
+	Test t = new Tes();
+	forEach(t::print); // o/p prints elements using instance method reference
+	
+	void print(int i){ // if public startWith print then (Test::print); // static method reference
+	SOP(i);	
+
+-> Stream vs parallel stream in java 8
+Both are used to process grp of obj
+stream exceute in a single core of ur machine with sequencial flow  - for write operations to maintain consistency
+parallel stream uses multiple core of ur machine (All the threads uses multiple core of ur machine) - better performance but not always recommeneded - for read operations
+
+->CompletableFuture
+Used for asynchronous programming in java.
+Asynchronus programming is a means of writing non-blocking code by running a task on a separate thread than the main 
+application thread and notifying the main thread about its progress, completion or failure.
+extension of Future obj which was introduced in java 5
+
+->why completablefuture why not future?
+It cannot be manually completed
+Multiple functions cannot be chained together
+No exception handling
+
+->How to decide thread pool size? depends on type of task you are exceuting
+CPU intensive tasks
+IO intensive tasks
+
+->GroupingBy method
+
+
+->Deafult and static method in interfaces
+default method is used to define a method with default implementation.
+You can override default method also to provide more specific implementation for the method.
+Static methods are used to define utility methods(class methods). 
+
+interface Sayable{    
+    // default method    
+    default void say(){    
+        System.out.println("Hello, this is default method");    
+    }    
+    // Abstract method    
+    void sayMore(String msg); 
+	
+    // static method    
+    static void sayLouder(String msg){    
+        System.out.println(msg);    
+    }    
+}    
+public class DefaultMethods implements Sayable{    
+    public void sayMore(String msg){     // implementing abstract method    
+        System.out.println(msg);    
+    }    
+    public static void main(String[] args) {    
+        DefaultMethods dm = new DefaultMethods();    
+        dm.say();                       // calling default method    
+        dm.sayMore("Work is worship");      // calling abstract method    
+        Sayable.sayLouder("Helloooo...");   // calling static method  using class itself
+    }    
+}    
+
+-> forEach() loop - new method forEach() to iterate the elements
+
+public class ForEachExample {  
+    public static void main(String[] args) {  
+        List<String> gamesList = new ArrayList<String>();  
+        gamesList.add("Football");  
+        gamesList.add("Cricket");  
+        gamesList.forEach(games -> System.out.println(games));  
+          
+    }  
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+List<integer> numb=Arrays.asList(1,2,3,4);// giving array elements
+
+Brute Force Method: is an approach that finds all the possible solutions to find a satisfactory solution to a given problem. O(n)=size of input
+
+
+trim() - removes leading and tailing spaces in the string
+String str = " follow me to moon  ";
+String s2 = str.trim(); // "follow me to moon"
+
+
+split() - breaks the string at the separator. returns an array of substrings.
+
+String str = " follow me to moon  ";
+String[] arr = s.split(" "); 
+for(String ele: arr)
+sop(ele); // follow , me , to , moon
+
+String to character array conversion:
+
+String str = "sowmya";
+
+char[] arr = str.toCharArray(); // s,o,w....
+
+
+

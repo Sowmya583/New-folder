@@ -1,0 +1,197 @@
+
+
+GIT
+---------------------------------------------------------------------------------------------------------------------
+
+Install git locally
+$git --version
+$git --help
+$git config --global user.name "Sowmya"
+$git config --global user.email sowmyagulla@gmail.com
+$git config --list  - to check the configuration
+create ur folder
+$mkdir Git_Demo
+$cd Git_Demo - navigates to this folder (base folder to create all repositories/folder)
+$mkdir FirstRepo - created a folder(repository)
+$cd FirstRepo  - it is empty folder 
+To create a repository
+$git init - then adds .git folder is added to FirstRepo folder
+create some files
+$touch master.txt
+$notepad master.txt - write any code
+$git status - untracked files are shown - all the status of the files is given like any file is added or modified or deleted.
+$git add . - adds all files to stage or its added to gits index or its ready for staging
+$git commit -m "message!!" - file is committed
+$git log - all commits history showing the latest on top
+To push local files to server so that others can also work on that 
+Go to GitHub 
+create a repo with same name as local i.e (FirstRepo)
+take the http url and add in local
+$git remote add origin https://github.com/sowmyagulla/FirstRepo.git - to add/push local files to server repo for the frst time
+$git remote -v - to check whether its added correctly to server
+$git push -u origin master - to push from local to server - -u is for upstream linking - the files are pushed to server from local
+--------------------------------------------
+here we used http, to use ssh key
+$ssh-keygen -t rsa -C sowmyagulla - a public key and private key is generated
+give any pwd
+add in the github settings ssh keys
+$ssh -T git@github.com
+------------------------------------------------
+to clone a repo to local from server, create a repo in server
+$git clone Server_repo_url     - http or ssh url - to clone any repo from server to local
+$git log --pretty=oneline - shows the log history in onlines
+$git reset --soft commit id(paste the log id which u want to reset)  - no msg shows -  removes the top logs until log id given
+$git reset --soft HEAD~ to revert the last commit
+$git reset --soft HEAD~2 to revert the 2 last commits
+$git log --pretty=online - shows the log list from this log id and removes the top logs
+$git checkout filename - to revert to previous changes
+$git checkout -- .  - To revert all files which are modified
+Do the above changes only when not pushed to server
+$git revert commit/log id - it undoes all the changes done as part of this cmd
+$git log --pretty=oneline
+-------------------------------------------
+Branching  -- non-linear becoz it stores as a tree
+$git branch branchname
+$git branch -v - shows list of branch 
+$git checkout branchname  - to move to that branch from master branch
+add any files in the branch , so that it only shows in the branch and not in the master branch
+$git push -u origin branchname -to push any particular branch to server 
+$git checkout -b branchname -- branch and checkout together 
+$git checkout master
+$git merge branchname  -merges changes to master branch  - before merging to master checkout to master branch so that new branch merges to master
+$git branch -d branchname  - while removing u shouldn't be on that particular branch
+to make this changes in server
+$git push origin --delete branchname - deletes the branch in server also
+
+----------------------
+Rebasing - used to make a linear sequence of commits 
+$git checkout branchname
+$git rebase master - add commits to the tip of master to have linear flow
+
+
+JAVA 
+Inheritance - one class acquring the properties of other class using extend keyword
+subclass ,derived, child class extends base ,super, parent class
+to access the properties/fileds of parent class from child class in constructor - use super() to invoke parent class fileds to child class and it should be the frst statment in the child constructor
+
+Encapuslation - binding data & methods together 
+hiding all the properties from outside the world. only class can access all the properties - u have complete control of the class 
+1.the properties are initiated using private which makes its restricted to outside that class
+2. using getter method to access those properties with right visibility. - public - u define how to outside world to access ur properties
+3. if u want to rewrite/overridden or set/add new value to any property use setter method - public - u define how u want to replace the values
+
+Abstraction - only show relevant data and hide internal details of a particular object from the outside world
+abstract is a keyword which can be used infront of a class or method
+abstract class cannot be instantiated(u cannot call the constructor of the class) ,but they can be subclassed(u can extend that abstract class).
+abstract class can have concrete and abstract methods
+abstract methods are only declared without definition or implementation - the extended class must provide implementation for these abstract methods
+if the extended class is not providing implementation of all the abstract methods in parent class then throws error - make that child class as abstract or provide all the implementation for parent abstract methods
+parent reference = new child(); 
+
+polymorphism - an entity can take multiple forms - an entity can be an obj, class or a method
+here we are taking a method which takes many forms
+--method overloading - the name of method remains same but the type of the return  may change and no.of args or type of args may change
+--method overriding - used together with inheritance - if the superclass defines a method and then subclass again tries to define the method with exact same signature and provided its own implementation.
+
+Exception handling
+
+for handling the exceptions we use try-catch blocks in java
+try{code}
+catch and finally blocks
+
+finally is used for clean up operations and executes even if the exception occurs or not - ex. to close file handler resource, if you open data base connection
+
+throw
+throws
+
+
+Hashset class in java - is part of the set interface hierarcy and sets have a property that they give the collection elements unique.
+hashset elements will be accesed in random fashion not in a sequence(not ordered)
+
+HashSet<String> h=new HashSet<String>();// hashset is a concrete class 
+or  
+Set<String> h=new HashSet<>();
+h.add("a");
+h.add("a");
+SOP(h);  //o/p [a] prints single a and removes duplicates, output is in random fashion sometimes abc or bca or cba
+h.contains("c"); return boolean
+h.remove("a");
+
+TreeSet - maintains natural ordering of elements. cannot have duplicate elements. not sychronized so not thread safe
+Set<String> h=new TreeSet<>();
+h.add("b");
+h.add("a");
+h.add("c");
+h.add("c");
+SOP(h);  //o/p [a,b,c] maintains natural order of alphabets. applies sorting here
+
+Map - to store key value arrangement elements
+keys are unique and the values can have duplicates
+map is reusing classes from collection framework. Map uses set class to store its keys and for values it uses list class
+Hashtable - thread safe - allow 1 thread to access the hash table at a particular time. slower
+HashMap and TreeMap - not thread safe - faster
+LinkedHashMap - the elements are stored in random order(hash property) and maintains sequence{linkedlist}(elements are accessed as inserted)
+TreeMap -maintains natural ordering of element on keys.
+
+
+HashMap - 
+HashMap<String, Integer> h=new HashMap<>();
+h.put("a",1);
+h.put("b",2);
+SOP(h); // o/p {a=1,b=2}
+
+for(String key : h.keySet())
+SOP(key "," h.get(key)); //o/p a,1     b,2
+
+for(Entry<String,Integer> entry : h.entrySet())
+SOP(entry.getKey() "," entry.getValue()); //o/p a,1     b,2
+
+TreeMap -
+TreeMap<Integer,String> map=new TreeMap<>();
+map.put(3,"a");
+map.put(2,"b");
+SOP(map); //o/p {2=b, 3=a}
+
+
+Maven - is a popular open source build tool developed by Apache Group to build,publish, and deploy several projects at once.
+maven is written in java
+build tool to build and manage java-based projects. manages dependencies
+Maven is based on POM (Project Object Model) and focuses of simplification and standardization of the building process.
+maven also helps us in getting right JAR files for each project
+mvnrepository.com - to download repositories.
+
+Maven repository refer to the directories of package JAR files that contain meta data. the meta data refers to the POM files relevant to the project
+This metadata is what allows maven to download dependencies
+3 types of repos:
+Local repos - ur pc
+remote repos -  any server
+central repos - internet
+
+Basic concepts of Maven:
+1. POM - refers to the XML files that have all the information regarding project and configuration details.
+It has the description of the project, details regarding the versioning and configuration management of the project
+the XML file is in the project home directory. maven searches for POM in the current directory when any task is to be executed
+2. Dependencies and Repositories - Dependencies refer to the java libraries that r needed for the project.
+Repositories refer to the directories of packaged  JAR files
+3.Build Lifecycles, phases and goals- build lifecycles consist of sequence of build phases , and each build phase consist of sequence od goals
+each goal is responsible for particular task
+4.Build profiles - refer to the set of configuration values, that are required to build a project using different configurations
+5.Build Plugins - refer to group of goals.These goals may or may not be of same phase
+
+Maven Architecture 
+Maven -> pom file (basics concepts) -> maven repository
+
+How it works:
+read pom.xml file
+download dependencies defined in pom.xml into local repo from central repo.
+create and generate a report according to the requirements, and execute life-cycles ,phases,goals and plugins etc.
+
+Maven Build Life cycle - is a collection of steps that are to be followed to build a project
+3 steps:
+Default: handles project deployement
+Clean: handles project cleaning
+Site: handles the creation of project site's documentation
+
+
+Jenkins - Jenkins is a self-contained, open-source automation server that can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software. 
+Jenkins can be installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed.

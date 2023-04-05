@@ -1,0 +1,162 @@
+JULY
+Updation of PBG forms-1/7/2022
+ATG Forms to create -4/7/2022
+ATG Forms to create-5/7/2022
+ATG Forms to create-6/7/2022
+ATG Forms to update-7/7/2022
+AWP forms to Create-8/7/2022
+AWP forms to Create-11/7/2022
+AWP Forms to Update-12/7/2022
+AWP Forms to Update-13/07/2022
+AWP Forms to Update-14/07/2022
+ATG Forms to create-15/07/2022
+TA1070931- LOTO Demonstration Forms creation-18/07/2022
+TA1071231- LOTO Demo Form-EN update-19/07/2022
+TA1071445
+TA1071447
+TA1071449
+TA1072004- LOTO Demonstration Forms - German-20/07/2022
+TA1073177- LOTO Demonstration Forms - German-21/07/2022
+TA1073660- LOTO forms Update-22/07/2022
+TA1074080 LOTO forms Update-EN - Day-2 25/07/2022
+TA1074736 LOTO forms Update-EN - Day-3 26/07/2022
+TA1075289 LOTO forms Update-EN - Day-4 27/07/2022
+TA1075797 LOTO forms Update-Swedish - Day 5-28/07/2022
+TA1076441 LOTO forms Update-Swedish - Day 6-29/07/2022
+
+AUGUST - 1.5 (Aug 5th, Aug 12th)
+TA1076992 - LOTO forms Update-German - Day 7 - 01/08/2022
+TA1077584 - ATG Forms to Create - Day 1 - 02/08/2022
+TA1078388 - ATG Forms to Create - Day 2 - 03/08/2022
+TA1078539 - LOTO - EU - Maintenance Forms Creation - DE - Day 1
+TA1079602 - LOTO - EU - Maintenance Forms Creation - DE - Day 2 - 04/08/2022
+TA1080640 - LOTO - EU - Maintenance Forms Creation - SV - 08/08/2022
+TA1081184 - LOTO - EU - Maintenance Forms Creation - RO, PL - 09/08/2022
+TA1081746 - LOTO - EU - Maintenance Forms Creation - PL, MNE - 10/08/2022
+TA1082547 - LOTO - EU - Maintenance Forms Creation - SQ, ET, UK - 11/08/2022
+TA1083074 - AWP Forms Creation - 12/08/2022
+TA1087831 - LOTO Forms Updation - 23/08/2022
+TA1089090 - LOTO Forms Creation - SV - 25/08/2022
+TA1089467 - LOTO Forms Updation - 26/08/2022
+
+----------------------------------------------------------------------
+Performance testing:
+Completed the Confluence page KT videos
+Installed the Jmeter
+Got the service details of field task and crew
+
+CRUX Reporting Team:
+Checked the meeting Recordings of previous sessions
+Completed the Confluence page links
+Verified the MVP Modules
+Validating the Accepted user stories
+
+
+SEPTEMBER - 1 (Sept 9th)
+TA1091948: ATG Form Creation - 01/09/2022
+TA1093209: ATG Group Untagging - Day 1 - 05/09/2022
+TA1093750: LOTO Demonstration Forms Updation - 06/09/2022
+TA1094163: LOTO-EU Forms Updation - 07/09/2022
+TA1094832: ATG Group Untagging - Day 2 - 08/09/2022
+TA1094839: Vehicle inspection Italian - Creation - 08/09/2022
+TA1095780: ATG Group Untagging - Day 3 - 12/09/2022
+TA1095816: MCE EU-FR Form Update - Day 1 
+TA1096573: MCE EU-FR Form Update - Day 2 - 13/09/2022
+TA1098035: Tagging and Remove Tagging of 5xDFG Configuration - 14/09/2022
+TA1098041: MCE-EU Portuguese Forms Creation - Day 1
+TA1098831: MCE-EU Portuguese Forms Creation - Day 2 - 15/09/2022
+TA1099964: MCE-EU Portuguese Forms Creation - Day 3 - 16/09/2022
+TA1100522: MCE-EU Portuguese Forms Creation - Day 4 - 19/09/2022
+TA1101126: MCE-EU Portuguese Forms Creation - Day 5 - 20/09/2022
+TA1101621: MCE-EU Portuguese Forms Creation - Day 6 - 21/09/2022
+TA1102214: MCE-EU Italian Forms Creation Day-1 - 22/09/2022
+TA1102517: MCE-EU Italian Forms Creation Day-2 - 23/09/2022
+TA1103047: MCE-EU Italian Forms Creation Day-3 - 26/09/2022
+TA1103646: MCE-EU Italian Forms Creation Day-4 - 27/09/2022
+TA1104607: MCE-EU Italian Forms Creation Day-5 - 28/09/2022
+TA1105014: ATG Forms Creation - Sierra - Day 1
+TA1105937: ATG Forms Creation - Sierra - Day 2 - 29/09/2022
+TA1106663: MCE-EU German Forms Creation Day-1 - 30/09/2022
+
+CRUX Reporting Team:
+---------------------------------------------------------------------
+Peformed testing in various environments(develop, ftr-develop, ftr-59)
+Raised some defects:
+DE188743: Create Report | Prepare Report | edit parameters | cancel | should 
+go to report view mode but going to my reports tab
+DE190086: Reports | Create Report | The Preview state should show the default widget 
+name and everything should be gray.
+DE190625: Create Report | Prepare Report | Asset status Module | uncheck few columns | 
+while clicking on Preview PDF, the unchecked columns are automatically getting selected again.
+DE190087: Notes | Preview PDF | cancel | edit the notes data and click on Preview PDF, 
+The new data is not updating in the Report Preview
+DE190168: Sent Reports | Report Name Column | Report Names are not shown completely
+DE190171: Planned Work | Uncheck the state filed | the header of all the states are 
+removed along with the state column in Planned work widget.
+DE190172: Sent Reports | Sorting and filtering are not removed after the page refresh.
+DE190175: Sent Reports | Filter Functionality is not working for Template and Created By Columns          
+
+
+OCTOBER - 1 (Oct 3rd- sick leave, Oct 25th,26th - Planned leave, Oct 24th - Holiday)
+TA1107734: MCE-EU German Forms Creation Day-2 - 04/10/2022
+TA1108423: ATG Form Creation - Sierra - 06/10/2022
+TA1109039: MCE-EU German Forms Creation Day-3 - 07/10/2022
+TA1109485: MCE-EU German Forms Creation Day-4 - 10/10/2022
+TA1110257: MCE-EU German Forms Creation Day-5 - 11/10/2022
+TA1111137: MCE-EU German Forms Creation Day-6 - 12/10/2022
+TA1112525: LOTO MENAT Forms - Creation - 13/10/2022
+TA1113024: LOTO MENAT Forms - Creation - Day 2 - 14/10/2022
+TA1113687: LOTO-EU Form Creation - 17/10/2022
+TA1113688: New LOTO-EU Forms Creation
+TA1114317: New LOTO-EU Forms Creation - Day 2 - 18/10/2022
+TA1114994: Cypress - Lithuanian Forms Creation - 19/10/2022
+TA1115759: LOTO MENAT - 3xDFG Creation - 20/10/2022
+TA1116085: LOTO MENAT - 3xDFG Creation - Day 2 - 21/10/2022
+TA1118264: ATG Forms Creation - Sierra - Day 1 - 27/10/2022
+TA1118756: ATG Forms Creation - Sierra - Day-2 - 28/10/2022
+TA1119221: ATG Forms Creation - Sierra - Day-3 -31/10/2022
+ 
+CRUX Reporting Team:
+---------------------------------------------------------------------
+Peformed testing in various environments(develop, ftr-develop, ftr-59)
+Written Testcases for the accepted user stories
+Raised few Defects:
+DE191732: Create Report | Preview PDF | Add/Edit the Attachments | The changes are not reflecting in the report preview
+DE191734: Send Report | The Send Report button is getting disabled after sending the report once.
+DE192407: Prepare Report/ Preview PDF/ Send Report | Refreshing page going to Define Parameters Page
+DE192408: Scope | If the site/service group name contain any special characters or spaces - Replacing with underscore ( _ )
+DE192409: Create Report | Prepare Report | No Sorting functionality for table widgets
+DE192411: Create Report | Prepare Report | Table Widgets | The legend which contain statuses are not in the same order.
+DE192412: Prepare Report | The Assets of concern, Planned Work, Site Roster Modules are not expanding and showing the checklists some times for Balko site.
+DE192741: Prepare Report | Report Modules | add attachment | Clicking on Restore Defaults is not removing the attachments added.
+
+NOVEMBER
+TA1119638: ATG Forms Creation - Sierra - Day-4 - 01/11/2022
+TA1119957: ATG Forms Creation - Sierra - Day-5 - 02/11/2022
+TA1120501: MCE-EU Forms Updation - 03/11/2022
+TA1120947: MCE-EU Forms Updation - Day 2 - 04/11/2022
+TA1121545: LOTO-EU Cypress Forms Creation - 07/11/2022
+TA1121892: LOTO-EU Cypress Forms Creation - Day 2 - 08/11/2022
+TA1122937: LOTO-EU Cypress Forms Creation - Day 3 - 09/11/2022
+TA1123836: LOTO-EU Cypress Forms Creation - Day 4 - 10/11/2022
+TA1124374: LOTO-EU Cypress Forms Creation - Day 5 - 11/11/2022
+TA1124923: LOTO-EU Cypress Forms Creation - Day 6 - 14/11/2022
+TA1125368: LOTO-EU Cypress Forms Creation & site tagging - Day 7 - 15/11/2022
+TA1126078: ATG Forms Creation - Sierra - 16/11/2022
+TA1126480: ATG Forms Creation - Sierra - Day 2 - 17/11/2022
+TA1127172: ATG Forms Creation - Sierra - Day 3 - 18/11/2022
+TA1127678: ATG Forms Creation - Sierra - 21/11/2022
+TA1128072: ATG Forms Creation - Sierra - Day 2 - 22/11/2022
+TA1128847: LOTO-EU forms Creation - German - 23/11/2022
+TA1129394: LOTO-EU forms Creation - German - Day 2 - 24/11/2022
+TA1129639: LOTO-EU forms Creation - German - Day 3 - 25/11/2022
+ 
+DE193085: Create Report | Define Parameters | Time range | Selecting any time range and then Custom leading to White Screen in develop
+DE193125: Create Report | Prepare Report | Attachments | Add <=5 attachments first and then try to exceed the limit of attachments - No error message is displaying
+
+
+GEREN FFA_Program_2021_22_23
+
+
+
+

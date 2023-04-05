@@ -1,0 +1,90 @@
+Stream API
+class Student{
+	public String name;
+	public int marks;
+	
+	constructor(){}
+}
+main(){
+	List<Student> student=new ArrayList<Student>();
+	student.add(new Student("sow", 70);
+	student.stream().filter(t->t.marks>50).forEach(t->system.out.println(t.marks));
+}
+
+
+List<Integer> list=new ArrayList<Integer>();
+list.add(3);
+list.add(5);
+forEach(Integer i:list)
+System.out.println(i);
+
+list.forEach(n-> SOP(n));
+
+list.stream().filter(t->t>50).forEach(t->SOP(t));
+
+List<Integer> list= new ArrayList<Integer>();
+list.add(5);
+list.stream().filter(t->t>4).forEach(t->SOP(t));
+
+List<Integer> list = Arrays.asList(2,3,4);
+
+
+Lambda exp
+@FI
+interface Sayable{
+	String say();
+}
+main(){
+	Sayable s = () -> {
+	return "says";
+	};
+	SOP(s.say());
+}
+
+
+git --version
+git config --global user.name "sowmya"
+git config --global user.email skdh@gmail
+mkdir Demo
+cd Demo
+mkdir Repo
+cd Repo
+git init
+touch e.txt
+notepad.txt
+git status
+git add .
+git commit -m "msg"
+git remote add origin url
+git push -u origin master
+git clone url
+git branch branchname
+git branch -v
+git checkout branchname
+git push -u origin branchname
+git checkout -b branchname
+git checkout master
+git merge branchname
+git branch - d branchname
+git push origin --delete branchname
+
+
+git log
+git log --pretty=oneline
+git reset --soft commit id
+git revert commit id
+
+git checkout branchname
+git rebase master
+
+
+
+penske
+lease app
+
+role -  bugs fixes -full
+my eclipse JEE full stack ide 1.8 
+webs pr app server v.85 liberty profile
+
+db - tsql
+solid principles
